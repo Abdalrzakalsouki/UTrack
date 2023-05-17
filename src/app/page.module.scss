@@ -1,0 +1,115 @@
+$primary-color-1: #47ffa5;
+$primary-color-2: #e366ff;
+$secondary-color-1: #ffffff;
+$secondary-color-2: #181818;
+
+$main-heading-desktop: 64px;
+$sub-heading-desktop: 20px;
+$main-heading-mobile: 32px;
+$sub-heading-mobile: 12px;
+
+$main-padding: 10px;
+$section-padding: 60px;
+
+@mixin Flex {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  padding: $main-padding;
+  .container {
+    @include Flex;
+    justify-content: space-between;
+    .logo {
+      max-width: 120px;
+      max-height: 60px;
+      cursor: pointer;
+    }
+    .navgation {
+      @include Flex;
+      justify-content: center;
+      li {
+        padding-inline: 20px;
+        cursor: pointer;
+        &:hover {
+          color: $primary-color-1;
+        }
+      }
+    }
+    .social {
+      @include Flex;
+      justify-content: space-between;
+      margin-right: 30px;
+      svg {
+        font-size: 22px;
+        margin-inline: 5px;
+        cursor: pointer;
+        &:hover {
+          color: $primary-color-1;
+        }
+      }
+    }
+  }
+}
+
+.landing {
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
+  .intro {
+    @include Flex;
+    justify-content: center;
+    .heading {
+      margin: 50px;
+      h1 {
+        font-size: $main-heading-desktop;
+        font-weight: bold;
+        line-height: 80px;
+        margin-bottom: 10px;
+        span {
+          color: $primary-color-2;
+        }
+      }
+      h4 {
+        font-size: $sub-heading-desktop;
+        padding-block: $main-padding;
+      }
+    }
+  }
+}
+
+.inputs {
+  @include Flex;
+  justify-content: flex-start;
+  margin-inline: 50px;
+  margin-top: -200px;
+  input {
+    background-color: $secondary-color-2;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: left;
+    width: 400px;
+    text-indent: 40px;
+    color: $secondary-color-1;
+    &:focus {
+      box-shadow: 0 0 10px $secondary-color-1;
+    }
+  }
+  button {
+    background-color: $primary-color-1;
+    padding: $main-padding;
+    border-radius: 25px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    margin-inline: 10px;
+    &:hover {
+      background-color: #00f77e;
+    }
+  }
+}

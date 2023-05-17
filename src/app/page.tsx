@@ -1,10 +1,12 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-
+import Header from "./header";
+import Landing from "./landing";
+import Input from "./input";
 export default function Home() {
   return (
     <main>
-      <h1>Hello World from Next.js!</h1>
+      <Header />
+      <Landing />
+      <Input />
     </main>
   );
 }
