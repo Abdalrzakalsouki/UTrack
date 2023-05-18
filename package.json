@@ -2,6 +2,7 @@
   "name": "utrack",
   "version": "0.1.0",
   "private": true,
+  "author": "Abdulrazzak Alsssouki",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
