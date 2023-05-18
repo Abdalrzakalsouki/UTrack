@@ -2,6 +2,7 @@ $primary-color-1: #47ffa5;
 $primary-color-2: #e366ff;
 $secondary-color-1: #ffffff;
 $secondary-color-2: #181818;
+$bg-color: #070707;
 
 $main-heading-desktop: 64px;
 $sub-heading-desktop: 20px;
@@ -89,39 +90,64 @@ $section-padding: 60px;
       }
     }
   }
-}
-
-.inputs {
-  @include Flex;
-  justify-content: flex-start;
-  margin-inline: 50px;
-  margin-top: -120px;
-  input {
-    background-color: $secondary-color-2;
-    border: none;
-    outline: none;
-    border-radius: 25px;
+  .card {
+    background-color: $bg-color;
+    border: solid 30px $secondary-color-2;
+    font-size: 20px;
     padding: 10px;
-    text-align: left;
-    width: 400px;
-    text-indent: 40px;
-    color: $secondary-color-1;
-    &:focus {
-      box-shadow: 0 0 10px $secondary-color-1;
+    width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 25px;
+    p {
+      padding: 5px;
+      text-align: left;
+      span {
+        float: right;
+      }
     }
   }
-  button {
-    background-color: $primary-color-1;
-    padding: $main-padding;
-    border-radius: 25px;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    margin-inline: 10px;
-    &:hover {
-      background-color: #00f77e;
+}
+
+div {
+  .inputs {
+    @include Flex;
+    justify-content: flex-start;
+    margin-inline: 50px;
+    margin-top: -120px;
+    input {
+      background-color: $secondary-color-2;
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      padding: 10px;
+      text-align: left;
+      width: 400px;
+      text-indent: 40px;
+      color: $secondary-color-1;
+      &:focus {
+        box-shadow: 0 0 10px $secondary-color-1;
+      }
     }
+    button {
+      background-color: $primary-color-1;
+      padding: $main-padding;
+      border-radius: 25px;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      width: 100px;
+      margin-inline: 10px;
+      &:hover {
+        background-color: #00f77e;
+      }
+    }
+  }
+  .validation {
+    color: #ff0000;
+    padding: 10px;
+    padding: 10px;
+    margin-left: 50px;
   }
 }
 

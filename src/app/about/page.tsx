@@ -2,8 +2,8 @@ import styles from "../page.module.scss";
 import * as pack from "../../../package.json";
 
 export default function About() {
-  const version: String = pack.version;
   const author: String = pack.author;
+  const version: String = pack.version;
   return (
     <main>
       <div className={styles.headings}>
