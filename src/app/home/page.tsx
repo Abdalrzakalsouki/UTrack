@@ -1,8 +1,8 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import LandingImg from "../../public/LandingImg.png";
-
-const Landing = () => {
+import styles from "../page.module.scss";
+import LandingImg from "../../../public/LandingImg.png";
+import Input from "../Input";
+const Home = () => {
   return (
     <main className={styles.landing}>
       <div className={styles.intro}>
@@ -14,8 +14,9 @@ const Landing = () => {
         </div>
         <Image src={LandingImg} alt="Landing Image" />
       </div>
+      <Input />
     </main>
   );
 };
 
-export default Landing;
+export default Home;

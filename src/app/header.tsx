@@ -9,7 +9,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div>
-          <Image src={Logo} alt="Logo" className={styles.logo} />
+          <Link href="/home">
+            <Image src={Logo} alt="Logo" className={styles.logo} />{" "}
+          </Link>
         </div>
         <ul className={styles.navgation}>
           <li>
@@ -20,9 +22,18 @@ const Header = () => {
           </li>
         </ul>
         <div className={styles.social}>
-          <AiFillGithub />
-          <AiTwotoneMail />
-          <AiFillLinkedin />
+          <Link href="https://github.com/Abdalrzakalsouki" target="_blank">
+            <AiFillGithub />
+          </Link>
+          <Link href="mailto:abdulrzakalsssouki@gmail.com" target="_blank">
+            <AiTwotoneMail />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/abdulrazzakalsssouki"
+            target="_blank"
+          >
+            <AiFillLinkedin />
+          </Link>
         </div>
       </div>
     </header>

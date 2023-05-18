@@ -8,20 +8,7 @@ const Input = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/fetch", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ IP }),
-      if(!response.ok) throw new Error('Could not fetch from client to server');
-      });
-    } catch (e) {
-      console.error(e);
-    }
   };
-
   return (
     <div className={styles.inputs}>
       <form onSubmit={handleSubmit}>
