@@ -1,14 +1,16 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, SyntheticEvent } from "react";
 import styles from "./page.module.scss";
 import { useRouter } from "next/navigation";
 import { isIP } from "is-ip";
+
 const Input = () => {
-  const [placeholder, setPlaceHolder] = useState("IP address...");
-  const [IP, setIP] = useState("");
+  const [placeholder, setPlaceHolder] = useState<string>("IP address...");
+  const [IP, setIP] = useState<string>("");
   const router = useRouter();
+
   const validateText = useRef<HTMLParagraphElement>(null);
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isIP(IP)) {
       router.push(`./home?q=${IP}`);

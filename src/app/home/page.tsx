@@ -3,8 +3,18 @@ import styles from "../page.module.scss";
 import LandingImg from "../../../public/LandingImg.png";
 import Input from "../Input";
 
+interface IpData {
+  continentName: string;
+  countryName: string;
+  city: string;
+  postalCode: number;
+  phoneCode: number;
+  latitude: string;
+  longitude: string;
+}
+
 async function getIPData(ip: String) {
-  const KEY = process.env.API_KEY;
+  const KEY: string | undefined = process.env.API_KEY;
   try {
     const response = await fetch(
       `http://apiip.net/api/check?ip=${ip}&accessKey=${KEY}`
@@ -17,9 +27,9 @@ async function getIPData(ip: String) {
   }
 }
 
-async function Home({ searchParams }: { searchParams: { q: String } }) {
-  const IP = searchParams.q;
-  const data = IP !== undefined ? await getIPData(IP) : undefined;
+async function Home({ searchParams }: { searchParams: { q: string } }) {
+  const IP: string = searchParams.q;
+  const data: IpData = IP !== undefined ? await getIPData(IP) : undefined;
 
   return (
     <main className={styles.landing}>
