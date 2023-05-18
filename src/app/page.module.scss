@@ -12,6 +12,10 @@ $sub-heading-mobile: 12px;
 $main-padding: 10px;
 $section-padding: 60px;
 
+$phone-screen: 700px;
+$meduim-phone-screen: 400px;
+$extra-phone-screen: 300px;
+
 @mixin Flex {
   display: flex;
   align-items: center;
@@ -57,6 +61,16 @@ $section-padding: 60px;
   }
 }
 
+@media (max-width: $meduim-phone-screen) {
+  .container {
+    flex-direction: column;
+    .social {
+      transform: translateX(10px);
+      padding-block: 20px;
+    }
+  }
+}
+
 .copyrights {
   position: absolute;
   bottom: 15px;
@@ -65,6 +79,11 @@ $section-padding: 60px;
   text-align: center;
 }
 
+@media (max-width: $extra-phone-screen) {
+  .copyrights {
+    font-size: 12px;
+  }
+}
 /* Home Page */
 
 .landing {
@@ -75,10 +94,11 @@ $section-padding: 60px;
     justify-content: center;
     .heading {
       margin: 50px;
+      width: 50%;
       h1 {
         font-size: $main-heading-desktop;
         font-weight: bold;
-        line-height: 80px;
+        line-height: 1.5;
         margin-bottom: 10px;
         span {
           color: $primary-color-2;
@@ -89,13 +109,16 @@ $section-padding: 60px;
         padding-block: $main-padding;
       }
     }
+    img {
+      margin-bottom: 50px;
+    }
   }
   .card {
     background-color: $bg-color;
     border: solid 30px $secondary-color-2;
     font-size: 20px;
     padding: 10px;
-    width: 800px;
+    width: 60%;
     margin: auto;
     margin-top: 50px;
     border-radius: 25px;
@@ -107,14 +130,46 @@ $section-padding: 60px;
       }
     }
   }
+  @media (max-width: $phone-screen) {
+    .intro {
+      flex-direction: column;
+      .heading {
+        width: 100%;
+        h1 {
+          font-size: 32px;
+        }
+        h4 {
+          font-size: 12px;
+        }
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .heading {
+      text-align: center;
+    }
+    .card {
+      width: 90%;
+      p {
+        text-align: center;
+        span {
+          display: block;
+          float: none;
+          padding: 10px;
+          color: $primary-color-2;
+        }
+      }
+    }
+  }
 }
 
 div {
   .inputs {
     @include Flex;
     justify-content: flex-start;
-    margin-inline: 50px;
-    margin-top: -120px;
+    flex-direction: column;
     input {
       background-color: $secondary-color-2;
       border: none;
@@ -122,7 +177,6 @@ div {
       border-radius: 25px;
       padding: 10px;
       text-align: left;
-      width: 400px;
       text-indent: 40px;
       color: $secondary-color-1;
       &:focus {
@@ -142,12 +196,21 @@ div {
         background-color: #00f77e;
       }
     }
+    @media (max-width: $extra-phone-screen) {
+      input {
+        display: block;
+        margin-bottom: 20px;
+      }
+      button {
+        transform: translateX(30%);
+      }
+    }
   }
   .validation {
     color: #ff0000;
     padding: 10px;
-    padding: 10px;
-    margin-left: 50px;
+    @include Flex;
+    justify-content: center;
   }
 }
 
@@ -185,7 +248,7 @@ main {
       }
     }
   }
-  @media (max-width: 700px) {
+  @media (max-width: $phone-screen) {
     .grid {
       grid-template-columns: 1fr;
       ul {
@@ -196,7 +259,11 @@ main {
         justify-content: center;
         list-style: none;
         padding-top: 0;
+        margin-bottom: 60px;
       }
+    }
+    .credit {
+      margin-bottom: 50px;
     }
   }
 }

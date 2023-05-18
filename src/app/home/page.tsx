@@ -17,9 +17,10 @@ async function getIPData(ip: String) {
   }
 }
 
-async function Home({ searchParams }) {
+async function Home({ searchParams }: { searchParams: { q: String } }) {
   const IP = searchParams.q;
   const data = IP !== undefined ? await getIPData(IP) : undefined;
+
   return (
     <main className={styles.landing}>
       <div className={styles.intro}>
