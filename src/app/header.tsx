@@ -23,16 +23,16 @@ const Header = () => {
         </ul>
         <div className={styles.social}>
           <Link href="https://github.com/Abdalrzakalsouki" target="_blank">
-            <AiFillGithub />
+            <AiFillGithub aria-hidden="true" />
           </Link>
           <Link href="mailto:abdulrzakalsssouki@gmail.com" target="_blank">
-            <AiTwotoneMail />
+            <AiTwotoneMail aria-hidden="true" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/abdulrazzakalsssouki"
             target="_blank"
           >
-            <AiFillLinkedin />
+            <AiFillLinkedin aria-hidden="true" />
           </Link>
         </div>
       </div>

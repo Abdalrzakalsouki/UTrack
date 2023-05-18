@@ -30,6 +30,7 @@ const Input = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
+            aria-labelledby="ip label"
             placeholder={placeholder}
             onFocus={() => setPlaceHolder("")}
             onChange={(e) => setIP(e.target.value)}

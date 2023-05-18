@@ -13,7 +13,7 @@ interface IpData {
   longitude: string;
 }
 
-async function getIPData(ip: String) {
+async function getIPData(ip: string) {
   const KEY: string | undefined = process.env.API_KEY;
   try {
     const response = await fetch(
