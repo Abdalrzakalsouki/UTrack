@@ -8,8 +8,8 @@ const Input = () => {
   const [placeholder, setPlaceHolder] = useState<string>("IP address...");
   const [IP, setIP] = useState<string>("");
   const router = useRouter();
-
   const validateText = useRef<HTMLParagraphElement>(null);
+
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isIP(IP)) {

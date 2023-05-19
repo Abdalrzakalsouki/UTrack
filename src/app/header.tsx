@@ -22,15 +22,24 @@ const Header = () => {
           </li>
         </ul>
         <div className={styles.social}>
-          <Link href="https://github.com/Abdalrzakalsouki" target="_blank">
+          <Link
+            href="https://github.com/Abdalrzakalsouki"
+            target="_blank"
+            aria-label="Github"
+          >
             <AiFillGithub aria-hidden="true" />
           </Link>
-          <Link href="mailto:abdulrzakalsssouki@gmail.com" target="_blank">
+          <Link
+            href="mailto:abdulrzakalsssouki@gmail.com"
+            target="_blank"
+            aria-label="Email"
+          >
             <AiTwotoneMail aria-hidden="true" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/abdulrazzakalsssouki"
             target="_blank"
+            aria-label="LinkedIn"
           >
             <AiFillLinkedin aria-hidden="true" />
           </Link>

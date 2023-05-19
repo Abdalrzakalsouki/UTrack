@@ -50,12 +50,15 @@ $extra-phone-screen: 300px;
       justify-content: space-between;
       margin-right: 30px;
       svg {
-        font-size: 22px;
+        font-size: 25px;
         margin-inline: 5px;
         cursor: pointer;
         &:hover {
           color: $primary-color-1;
         }
+      }
+      .logo {
+        margin-right: 15px;
       }
     }
   }
@@ -144,13 +147,13 @@ $extra-phone-screen: 300px;
         h1 {
           font-size: 32px;
         }
-        h4 {
+        h2 {
           font-size: 12px;
         }
       }
       img {
         width: 200px;
-        height: 200px;
+        height: 197.4842767295597px;
       }
     }
     .heading {

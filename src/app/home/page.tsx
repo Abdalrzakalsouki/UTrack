@@ -56,6 +56,7 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
   const IP: string = searchParams.q;
   const data = IP !== undefined ? await getIpDataMain(IP) : undefined;
   const ImageClass = `${data ? styles.lighImage : ""}`;
+
   return (
     <main className={styles.landing}>
       <div className={styles.intro}>
@@ -63,7 +64,7 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
           <h1>
             Get <span>Instant</span> Location data
           </h1>
-          <h4>Of Any IP And Completely free!</h4>
+          <h2>Of Any IP And Completely free!</h2>
         </div>
         <Image src={LandingImg} className={ImageClass} alt="Landing Image" />
       </div>
