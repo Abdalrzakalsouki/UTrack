@@ -4,32 +4,57 @@ import LandingImg from "../../../public/LandingImg.png";
 import Input from "../Input";
 
 interface IpData {
-  continentName: string;
-  countryName: string;
+  mobile?: boolean;
+  proxy?: boolean;
+  query?: number;
+  continent?: string;
+  country?: string;
   city: string;
-  postalCode: number;
-  phoneCode: number;
-  latitude: string;
-  longitude: string;
+  lat?: string;
+  lon?: string;
+  zip?: number;
+  continentName?: string;
+  countryName?: string;
+  postalCode?: number;
+  latitude?: number;
+  longitude?: number;
+  phoneCode?: number;
+  ip?: number;
 }
 
-async function getIPData(ip: string) {
-  const KEY: string | undefined = process.env.API_KEY;
+async function getIpDataEmergency(ip: string) {
   try {
+    const KEY: string | undefined = process.env.API_KEY;
     const response = await fetch(
       `http://apiip.net/api/check?ip=${ip}&accessKey=${KEY}`
     );
-    if (!response.ok) throw new Error("Could not fetch the data");
+    if (!response.ok) throw new Error("Could not fetch data");
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
+  }
+}
+
+async function getIpDataMain(ip: string) {
+  try {
+    const response = await fetch(
+      `http://ip-api.com/json/${ip}?fields=continent,country,city,zip,lat,lon,query`
+    );
+    if (!response.ok) {
+      const data = await getIpDataEmergency(ip);
+      return data;
+    }
+    const data: IpData = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 }
 
 async function Home({ searchParams }: { searchParams: { q: string } }) {
   const IP: string = searchParams.q;
-  const data: IpData = IP !== undefined ? await getIPData(IP) : undefined;
+  const data = IP !== undefined ? await getIpDataMain(IP) : undefined;
   const ImageClass = `${data ? styles.lighImage : ""}`;
   return (
     <main className={styles.landing}>
@@ -46,27 +71,33 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
       {data !== undefined && (
         <div>
           <div className={styles.card}>
-            <p>
-              Continent <span>{data.continentName}</span>
+            <p className={styles.ip}>
+              IP Address <span>{data.query || data.ip}</span>
             </p>
             <p>
-              Country <span>{data.countryName}</span>
+              Continent <span>{data.continent || data.continentName}</span>
+            </p>
+            <p>
+              Country <span>{data.country || data.countryName}</span>
             </p>
             <p>
               City <span>{data.city}</span>
             </p>
             <p>
-              Postal Code <span>{data.postalCode}</span>
+              Latitude <span>{data.lat || data.latitude}</span>
             </p>
             <p>
-              Phone Code <span>{data.phoneCode}</span>
+              Longitude <span>{data.lon || data.Longitude}</span>
             </p>
-            <p>
-              Latitude <span>{data.latitude}</span>
-            </p>
-            <p>
-              Longitude <span>{data.longitude}</span>
-            </p>
+            {data.zip ? (
+              <p>
+                Zip<span>{data.zip}</span>
+              </p>
+            ) : (
+              <p>
+                Post Code<span>{data.postalCode}</span>
+              </p>
+            )}
           </div>
         </div>
       )}

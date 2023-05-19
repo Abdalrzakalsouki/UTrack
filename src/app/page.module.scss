@@ -132,6 +132,9 @@ $extra-phone-screen: 300px;
         float: right;
       }
     }
+    .ip {
+      color: $primary-color-2;
+    }
   }
   @media (max-width: $phone-screen) {
     .intro {
