@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../page.module.scss";
 import LandingImg from "../../../public/LandingImg.png";
 import Input from "../Input";
+import Map from "../Map";
 
 interface IpData {
   mobile?: boolean;
@@ -100,6 +101,10 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
               </p>
             )}
           </div>
+          <Map
+            latitude={data.lat || data.latitude}
+            longitude={data.lon || data.Longitude}
+          />
         </div>
       )}
     </main>
