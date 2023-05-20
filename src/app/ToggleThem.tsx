@@ -1,11 +1,17 @@
 "use client";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
-
+import styels from "./page.module.scss";
 import { useState, useEffect } from "react";
-
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { FaSun } from "react-icons/fa";
 const ToggleTheme = () => {
   const [toggle, setToggle] = useState<boolean>(true);
+
+  const cutomIcon = {
+    checked: <BsFillMoonStarsFill />,
+    unchecked: <FaSun />,
+  };
 
   useEffect(() => {
     const root = document.documentElement;
@@ -19,7 +25,12 @@ const ToggleTheme = () => {
 
   return (
     <div>
-      <Toggle checked={toggle} onChange={() => setToggle(!toggle)} />
+      <Toggle
+        checked={toggle}
+        onChange={() => setToggle(!toggle)}
+        icons={cutomIcon}
+        className={styels.toggle}
+      />
     </div>
   );
 };

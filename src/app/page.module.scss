@@ -159,6 +159,7 @@ $extra-phone-screen: 300px;
         width: 100%;
         h1 {
           font-size: 32px;
+          margin-top: 50px;
         }
         h2 {
           font-size: 12px;
@@ -287,5 +288,16 @@ main {
     .credit {
       margin-bottom: 50px;
     }
+  }
+}
+
+/* Toggle Button */
+
+.toggle {
+  margin-top: 20px;
+  color: $secondary-color-1;
+  margin-top: -0.1px;
+  svg {
+    margin-top: -2px;
   }
 }
