@@ -16,6 +16,7 @@ const Map = ({
       center={[latitude, longitude]}
       zoom={13}
       className={styles.map}
+      scrollWheelZoom={false}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

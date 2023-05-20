@@ -76,27 +76,27 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
             <p className={styles.ip}>
               IP Address <span>{data.query || data.ip}</span>
             </p>
-            <p>
+            <p className={styles.light}>
               Continent <span>{data.continent || data.continentName}</span>
             </p>
-            <p>
+            <p className={styles.light}>
               Country <span>{data.country || data.countryName}</span>
             </p>
-            <p>
+            <p className={styles.light}>
               City <span>{data.city}</span>
             </p>
-            <p>
+            <p className={styles.light}>
               Latitude <span>{data.lat || data.latitude}</span>
             </p>
-            <p>
+            <p className={styles.light}>
               Longitude <span>{data.lon || data.Longitude}</span>
             </p>
             {data.zip ? (
-              <p>
+              <p className={styles.light}>
                 Zip<span>{data.zip}</span>
               </p>
             ) : (
-              <p>
+              <p className={styles.light}>
                 Post Code<span>{data.postalCode}</span>
               </p>
             )}

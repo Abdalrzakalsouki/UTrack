@@ -135,6 +135,12 @@ $extra-phone-screen: 300px;
         float: right;
       }
     }
+    .light {
+      color: $secondary-color-1;
+    }
+    .dark {
+      color: "#000000";
+    }
     .ip {
       color: $primary-color-2;
     }

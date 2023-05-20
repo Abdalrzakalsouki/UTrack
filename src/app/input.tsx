@@ -39,7 +39,7 @@ const Input = () => {
           <button>Search</button>
         </form>
       </div>
-      <p className={styles.validation} ref={validateText}></p>
+      <div className={styles.validation} ref={validateText}></div>
     </div>
   );
 };

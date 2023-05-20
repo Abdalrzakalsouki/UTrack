@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.scss";
 import Logo from "../../public/Logo.svg";
+import ToggleTheme from "./ToggleThem";
 import { AiFillGithub, AiTwotoneMail, AiFillLinkedin } from "react-icons/ai";
 
 const Header = () => {
@@ -21,6 +22,7 @@ const Header = () => {
             <Link href="/about">About</Link>
           </li>
         </ul>
+        <ToggleTheme />
         <div className={styles.social}>
           <Link
             href="https://github.com/Abdalrzakalsouki"
