@@ -35,6 +35,8 @@ npm run dev
 
 ## url
 
+Live Site URL: (https://u-track.vercel.app/home)
+
 ## Technologies
 
 - Nextjs 13
