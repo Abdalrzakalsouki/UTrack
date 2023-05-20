@@ -1,8 +1,8 @@
 import "./globals.css";
 import { Mulish } from "next/font/google";
 import { Metadata } from "next";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "src/app/Header";
+import Footer from "src/app/Footer";
 
 const mulish = Mulish({ subsets: ["latin"], display: "swap" });
 

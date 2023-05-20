@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "../page.module.scss";
 import LandingImg from "../../../public/LandingImg.png";
-import Input from "../Input";
-import Map from "../Map";
+import Input from "src/app/Input";
+import Map from "src/app/Map";
 
 interface IpData {
   mobile?: boolean;
