@@ -56,7 +56,7 @@ async function getIpDataMain(ip: string) {
 async function Home({ searchParams }: { searchParams: { q: string } }) {
   const IP: string = searchParams.q;
   const data = IP !== undefined ? await getIpDataMain(IP) : undefined;
-  const ImageClass = `${data ? styles.lighImage : ""}`;
+  const ImageLighter = `${data ? styles.lighImage : ""}`;
 
   return (
     <main className={styles.landing}>
@@ -67,7 +67,10 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
           </h1>
           <h2>Of Any IP And Completely free!</h2>
         </div>
-        <Image src={LandingImg} className={ImageClass} alt="Landing Image" />
+        <div className={styles.ImageContiner}>
+          <Image src={LandingImg} alt="Landing Image" />
+          <div className={ImageLighter}></div>
+        </div>
       </div>
       <Input />
       {data !== undefined && (
@@ -101,14 +104,10 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
               </p>
             )}
           </div>
-          {typeof window !== undefined ? (
-            <Map
-              latitude={data.lat || data.latitude}
-              longitude={data.lon || data.Longitude}
-            />
-          ) : (
-            <></>
-          )}
+          <Map
+            latitude={data.lat || data.latitude}
+            longitude={data.lon || data.Longitude}
+          />
         </div>
       )}
     </main>

@@ -31,6 +31,7 @@ const ToggleTheme = () => {
         onChange={() => setToggle(!toggle)}
         icons={cutomIcon}
         className={styels.toggle}
+        aria-label="Switch theme"
       />
     </div>
   );

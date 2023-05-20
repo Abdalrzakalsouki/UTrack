@@ -13,7 +13,7 @@ $main-padding: 10px;
 $section-padding: 60px;
 
 $phone-screen: 700px;
-$meduim-phone-screen: 400px;
+$meduim-phone-screen: 500px;
 $extra-phone-screen: 300px;
 
 @mixin Flex {
@@ -71,6 +71,14 @@ $extra-phone-screen: 300px;
       transform: translateX(10px);
       padding-block: 20px;
     }
+    .navgation {
+      li {
+        a {
+          font-size: 18px;
+          padding: 10px;
+        }
+      }
+    }
   }
 }
 
@@ -112,11 +120,23 @@ $extra-phone-screen: 300px;
         padding-block: $main-padding;
       }
     }
+    .ImageContiner {
+      position: relative;
+      display: inline-block;
+    }
     img {
       margin-bottom: 50px;
     }
     .lighImage {
-      box-shadow: 0px 0px 20px 5px $secondary-color-1;
+      border-radius: 100%;
+      position: absolute;
+      content: "";
+      width: 299px;
+      height: 299px;
+      background-color: $primary-color-2;
+      top: 0;
+      left: -3px;
+      box-shadow: 1px 1px 30px white;
     }
   }
   .card {
@@ -166,8 +186,12 @@ $extra-phone-screen: 300px;
         }
       }
       img {
-        width: 200px;
-        height: 197.4842767295597px;
+        width: 199.9872px;
+        height: 200px;
+      }
+      .lighImage {
+        width: 205px;
+        height: 200px;
       }
     }
     .heading {
@@ -294,10 +318,15 @@ main {
 /* Toggle Button */
 
 .toggle {
-  margin-top: 20px;
   color: $secondary-color-1;
   margin-top: -0.1px;
   svg {
     margin-top: -2px;
+  }
+}
+
+@media (max-width: $meduim-phone-screen) {
+  .toggle {
+    margin-top: 20px;
   }
 }
