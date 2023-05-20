@@ -5,6 +5,7 @@ import styels from "./page.module.scss";
 import { useState, useEffect } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
+
 const ToggleTheme = () => {
   const [toggle, setToggle] = useState<boolean>(true);
 

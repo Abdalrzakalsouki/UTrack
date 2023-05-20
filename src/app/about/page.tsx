@@ -18,10 +18,9 @@ export default function About() {
           <li>Retrieve Country</li>
           <li>Retrieve City</li>
           <li>Retrieve Latitude and Longitude</li>
-          <li>Retrieve Post Code</li>
-          <li>Retrieve Phone Code</li>
-          <li>Check Proxy</li>
-          <li>Check TOR</li>
+          <li>Map</li>
+          <li>Dark/Light theme</li>
+          <li>Accessibility</li>
         </ul>
         <div className={styles.credit}>
           <h2>Credits</h2>
@@ -30,10 +29,9 @@ export default function About() {
 
         <ul>
           <h2>UpComing</h2>
-          <li>Google Map</li>
           <li>IP Auto Detection</li>
           <li>PWA</li>
-          <li>Accessibility</li>
+          <li>Improve Accessibility</li>
           <li>Improve Performance</li>
           <li>Google Tracking</li>
           <li>IP Verification</li>

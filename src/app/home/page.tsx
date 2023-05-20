@@ -101,10 +101,14 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
               </p>
             )}
           </div>
-          <Map
-            latitude={data.lat || data.latitude}
-            longitude={data.lon || data.Longitude}
-          />
+          {typeof window !== undefined ? (
+            <Map
+              latitude={data.lat || data.latitude}
+              longitude={data.lon || data.Longitude}
+            />
+          ) : (
+            <></>
+          )}
         </div>
       )}
     </main>
