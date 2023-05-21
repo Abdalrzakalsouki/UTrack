@@ -173,6 +173,13 @@ $extra-phone-screen: 300px;
     border-radius: 10px;
     margin-block: 20px;
   }
+  .userIP {
+    text-align: center;
+    margin-bottom: 20px;
+    span {
+      color: $primary-color-2;
+    }
+  }
   @media (max-width: $phone-screen) {
     .intro {
       flex-direction: column;
