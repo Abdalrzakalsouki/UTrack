@@ -4,7 +4,7 @@ UTRACK
 
 ## Project Description
 
-IP Detection Application with map, built with Next.js 13
+IP Geolocation Application with map, built with Next.js 13
 
 ## Table of Contents
 
