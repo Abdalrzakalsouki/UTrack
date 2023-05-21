@@ -19,6 +19,7 @@ export default function About() {
           <li>Retrieve City</li>
           <li>Retrieve Latitude and Longitude</li>
           <li>Map</li>
+          <li>IP Auto Detection</li>
           <li>Dark/Light theme</li>
           <li>Accessibility</li>
         </ul>
@@ -29,7 +30,6 @@ export default function About() {
 
         <ul>
           <h2>UpComing</h2>
-          <li>IP Auto Detection</li>
           <li>PWA</li>
           <li>Improve Accessibility</li>
           <li>Improve Performance</li>
