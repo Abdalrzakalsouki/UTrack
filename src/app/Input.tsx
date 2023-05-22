@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, SyntheticEvent } from "react";
+import { useState, useRef, SyntheticEvent, useEffect } from "react";
 import styles from "./page.module.scss";
 import { useRouter } from "next/navigation";
 import { isIP } from "is-ip";
@@ -7,8 +7,19 @@ import { isIP } from "is-ip";
 const Input = () => {
   const [placeholder, setPlaceHolder] = useState<string>("IP address...");
   const [IP, setIP] = useState<string>("");
+  const [userIP, setUserIP] = useState<string>("");
   const router = useRouter();
   const validateText = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const getUserIP = async () => {
+      const response = await fetch(`https://api.ipify.org/?format=json`);
+      if (!response.ok) throw new Error("Could not get user IP address");
+      const data = await response.json();
+      setUserIP(data.ip);
+    };
+    getUserIP().catch((error) => console.error(error));
+  }, []);
 
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,6 +37,11 @@ const Input = () => {
 
   return (
     <div>
+      {userIP !== undefined && (
+        <p className={styles.userIP}>
+          Your IP address is: <span>{userIP}</span>
+        </p>
+      )}
       <div className={styles.inputs}>
         <form onSubmit={handleSubmit}>
           <input

@@ -53,18 +53,10 @@ async function getIpDataMain(ip: string) {
   }
 }
 
-async function getUserIP() {
-  const response = await fetch(`https://api.ipify.org/?format=json`);
-  if (!response.ok) throw new Error("Could not get user IP address");
-  const data = await response.json();
-  return data;
-}
-
 async function Home({ searchParams }: { searchParams: { q: string } }) {
   const IP: string = searchParams.q;
   const data = IP !== undefined ? await getIpDataMain(IP) : undefined;
   const ImageLighter = `${data ? styles.lighImage : ""}`;
-  const userIP = await getUserIP();
   return (
     <main className={styles.landing}>
       <div className={styles.intro}>
@@ -79,11 +71,6 @@ async function Home({ searchParams }: { searchParams: { q: string } }) {
           <div className={ImageLighter}></div>
         </div>
       </div>
-      {userIP !== undefined && (
-        <div className={styles.userIP}>
-          Your IP address is: <span>{userIP.ip}</span>
-        </div>
-      )}
 
       <Input />
       {data !== undefined && (
