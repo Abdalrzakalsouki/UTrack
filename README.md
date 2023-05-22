@@ -49,7 +49,6 @@ Live Site URL: (https://u-track.vercel.app/home)
 
 Upcoming featuers:
 
-- IP Auto Detection
 - PWA
 - Improve Accessibility
 - Improve Performance
